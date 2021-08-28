@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = {"/customerinformation"})
-public class CustomerInformationController {
+public class RegistryInformationController {
 
     @GetMapping("/teste")
     public String getTeste(){
