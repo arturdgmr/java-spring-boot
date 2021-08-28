@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @EnableFeignClients
-@FeignClient(name = "${feign.name}", url = "${feign.url}")
-public interface CustomerProfile {
+@FeignClient(name = "CustomerProfileClient", url = "${config.customer-profile-api.url}")
+public interface CustomerProfileClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/registryinformation")
     String getRegistryInformation();
