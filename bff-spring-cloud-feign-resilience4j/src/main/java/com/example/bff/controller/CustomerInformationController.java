@@ -10,6 +10,6 @@ public class CustomerInformationController {
 
     @GetMapping("/teste")
     public String getTeste(){
-        return "Artur Rodrigues";
+        return "teste";
     }
 }
