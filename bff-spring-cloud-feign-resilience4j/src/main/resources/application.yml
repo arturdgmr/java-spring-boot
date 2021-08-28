@@ -1,2 +1,12 @@
 server:
   port: 9000
+
+feign:
+  name: customerprofile
+  url: http://localhost:8080/
+
+resilience4j:
+  retry:
+    instances:
+      customer-profile-api:
+        max-attempts: 5
