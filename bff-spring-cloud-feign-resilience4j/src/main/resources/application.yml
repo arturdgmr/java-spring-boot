@@ -3,7 +3,6 @@ server:
 
 resilience4j:
   circuitbreaker:
-    enabled: true
     instances:
       customer-profile-api:
         failureRateThreshold: 50
