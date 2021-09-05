@@ -1,0 +1,7 @@
+kafka:
+  listener:
+    bootstrap-servers: http://localhost:9092
+    events-consumer-group: customer-register-finish-consumer-group
+    events-auto-offset-reset-config: latest
+    topics:
+      finish-registration: customer-profile-events
