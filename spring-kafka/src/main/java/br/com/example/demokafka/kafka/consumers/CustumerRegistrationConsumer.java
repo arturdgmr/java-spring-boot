@@ -1,4 +1,4 @@
-package br.com.example.kafka.consumers;
+package br.com.example.demokafka.kafka.consumers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CostumerRegistrationConsumer {
+public class CustumerRegistrationConsumer {
 
     @KafkaListener(topics = "${kafka.listener.topics.finish-registration}", groupId = "${kafka.listener.events-consumer-group}")
     public void consumer(@Payload String message, Acknowledgment ack){
