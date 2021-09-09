@@ -17,7 +17,7 @@ public class CustumerRegistrationProducer {
     private String topic;
 
     public void sendMessage(String message){
-        log.info("Message send");
+        log.info("M=sendMessage,  message={}", message);
         ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, message);
         kafkaTemplate.send(producerRecord);
     }
