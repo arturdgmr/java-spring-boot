@@ -1,5 +1,7 @@
 package br.com.example.demokafka.kafka.producers;
 
+import br.com.example.demokafka.kafka.producers.converter.CustomerRegistryConverter;
+import io.confluent.connect.avro.FinishRegistrationCustomer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -11,15 +13,17 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 public class CustumerRegistrationProducer {
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, FinishRegistrationCustomer> kafkaTemplate;
+    private final CustomerRegistryConverter customerRegistryConverter;
 
     @Value("${kafka.listener.topics.finish-registration}")
     private String topic;
 
     public void sendMessage(String message){
-        log.info("M=sendMessage,  message={}", message);
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, message);
+        FinishRegistrationCustomer body = customerRegistryConverter.toCustomerRegistrationCompleted(message);
+        ProducerRecord<String, FinishRegistrationCustomer> producerRecord = new ProducerRecord<String, FinishRegistrationCustomer>(topic, body);
         kafkaTemplate.send(producerRecord);
+        log.info("M=sendMessage,  message={}", message);
     }
 
 }

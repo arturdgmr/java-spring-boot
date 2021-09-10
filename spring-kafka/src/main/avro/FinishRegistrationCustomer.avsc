@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "FinishRegistrationCustomer",
+  "namespace": "io.confluent.connect.avro",
+  "fields": [
+    {
+      "name": "message",
+      "type": ["null", "string"]
+    }
+  ]
+}
