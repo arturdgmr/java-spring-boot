@@ -1,4 +1,4 @@
-package br.com.example.demokafka.kafka.consumers;
+package com.example.customer.profile.api.kafka.consumers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

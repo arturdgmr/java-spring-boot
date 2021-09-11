@@ -1,4 +1,4 @@
-package br.com.example.demokafka.kafka.config;
+package com.example.customer.profile.api.kafka.config;
 
 import lombok.AllArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -20,26 +20,6 @@ import java.util.Properties;
 public class KafkaConfiguration {
     private KafkaConfigData config;
     private static final String ACKS_ALL_CONSTANT = "all";
-
-    @Bean
-    public ProducerFactory<String, String> producerFactory(){
-        return new DefaultKafkaProducerFactory(senderProps());
-    }
-
-    private Properties senderProps() {
-        Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, config.getBootstrapServers());
-        props.put(ProducerConfig.LINGER_MS_CONFIG, 10);
-        props.put(ProducerConfig.ACKS_CONFIG, ACKS_ALL_CONSTANT);
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class);
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        return props;
-    }
-
-    @Bean
-    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory){
-        return new KafkaTemplate(producerFactory);
-    }
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<Integer, String> kafkaListenerContainerFactory(ConsumerFactory<Integer, String> consumerFactory) {

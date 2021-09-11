@@ -1,1 +1,10 @@
+server:
+  port: 9000
 
+kafka:
+  listener:
+    bootstrap-servers: http://localhost:9092
+    events-consumer-group: customer-profile-api-register-finish-consumer-group
+    events-auto-offset-reset-config: latest
+    topics:
+      finish-registration: customer-profile-events
