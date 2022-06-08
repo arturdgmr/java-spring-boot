@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 @RestController
 @RequestMapping(value = "/teste")
@@ -47,9 +48,9 @@ public class PaymentController {
 //                });
     }
 
-    @GetMapping
-    public Mono<Payment> getPayment(){
-        return Mono.fromCallable(() -> Payment.builder().build());
+    @GetMapping("/{userId}")
+    public Mono<Payment> getPayment(@PathVariable("userId") String userId){
+        return Mono.defer(() -> paymentRepository.getPayment(userId)).subscribeOn(Schedulers.parallel());
     }
 
     @Data

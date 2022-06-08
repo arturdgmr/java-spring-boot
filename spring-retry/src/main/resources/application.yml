@@ -1,0 +1,5 @@
+config:
+  registry-information-api:
+    url: http://localhost:9000/
+  payment-api:
+    url: http://localhost:9001/
