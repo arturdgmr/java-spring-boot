@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/java-oo-solid/pom.xml" />
         <option value="$PROJECT_DIR$/customer-profile-api/pom.xml" />
         <option value="$PROJECT_DIR$/spring-webflux/spring-webflux/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-retry/pom.xml" />
       </list>
     </option>
   </component>

@@ -3,3 +3,5 @@ config:
     url: http://localhost:9000/
   payment-api:
     url: http://localhost:9001/
+  back_b:
+    url: http://localhost:9090

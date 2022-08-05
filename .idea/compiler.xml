@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-webflux" />
+        <module name="spring-retry" />
         <module name="customer-profile-api" />
         <module name="java-oo-solid" />
       </profile>
@@ -25,6 +26,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="customer-profile-api" options="-parameters" />
       <module name="java-oo-solid" options="-parameters" />
+      <module name="spring-retry" options="-parameters" />
       <module name="spring-webflux" options="-parameters" />
     </option>
   </component>
